@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import List from "../List";
-import { getTopStories } from "../ApiPromise";
+import { getNewStories } from "../ApiPromise";
 
 class New extends Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class New extends Component {
         }
     }
     componentDidMount() {
-        getTopStories()
+        getNewStories()
             .then((res) => {
                 this.setState({
                     data: res,
@@ -20,11 +20,11 @@ class New extends Component {
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
                 {
-                    this.state.data.map((id) => <List data={id} key={id.id} />)
+                    this.state.data.map((id, i = 0) => <List data={id} key={id.id} index={++i} />)
                 }
-            </div>
+            </React.Fragment>
         );
     }
 }

@@ -2,18 +2,17 @@ import React from 'react';
 import Style from "../Styles/App.module.css";
 
 const Header = (props) => {
-    let i = 1;
     return (
         <div className={Style.list}>
             <div className={Style.list_head}>
-                <span >{i}</span>
+                <span >{props.index}</span>
                 <a href={props.data.url}>
-                    <span aria-label="up-triangle" role="img">⏶</span>{props.data.title}
-                    <span className={Style.list_url}>({props.data.url})</span>
+                    <div className={Style.upvote} title="upvote"></div>{props.data.title}
+                    <span className={Style.list_url}> ({props.data.url})</span>
                 </a>
             </div>
             <div className={Style.list_detail}>
-                &nbsp;&nbsp;&nbsp;{props.data.score} points by {props.data.by}| 100 comments
+                &nbsp;&nbsp;&nbsp;{props.data.score} points by {props.data.by}
             </div>
             <div className={Style.line}>
                 <hr />

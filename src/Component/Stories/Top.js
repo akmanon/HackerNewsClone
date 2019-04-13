@@ -21,11 +21,11 @@ class Top extends Component {
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
                 {
-                    this.state.data.map((id) => <List data={id} key={id.id} />)
+                    this.state.data.map((id, i = 0) => <List data={id} key={id.id} index={++i} />)
                 }
-            </div>
+            </React.Fragment>
         );
     }
 }

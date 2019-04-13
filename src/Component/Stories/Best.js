@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getTopStories } from "../ApiPromise";
+import { getBestStories } from "../ApiPromise";
 import List from "../List";
 
 class Best extends Component {
@@ -10,7 +10,8 @@ class Best extends Component {
         }
     }
     componentDidMount() {
-        getTopStories()
+
+        getBestStories()
             .then((res) => {
                 this.setState({
                     data: res,
@@ -20,11 +21,11 @@ class Best extends Component {
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
                 {
-                    this.state.data.map((id) => <List data={id} key={id.id} />)
+                    this.state.data.map((id, i = 0) => <List data={id} key={id.id} index={++i} />)
                 }
-            </div>
+            </React.Fragment>
         );
     }
 }
