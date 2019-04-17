@@ -8,9 +8,7 @@ const Header = () => {
             <Link to="/" className={Style.link}>Hacker News Clone</Link>
             <Link to="/newest/" className={Style.link}>new</Link>
             <Link to="/best/" className={Style.link}>| best</Link>
-            <Link to="/ask/" className={Style.link}>| ask</Link>
-            <Link to="/show/" className={Style.link}>| show</Link>
-            <Link to="/job/" className={Style.link}>| jobs</Link>
+            <Link to="/" className={Style.link}>| top</Link>
         </div>
     );
 };
