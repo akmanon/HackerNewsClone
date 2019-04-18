@@ -1,24 +1,43 @@
+
+
 .header_wrap{
     font-size: 1.2rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    background-color: #ff6600;
+    background-color: var(--header-color);
     padding: 5px;
     margin-bottom: 20px;
+}
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold; 
+}
+.footer a{
+    color: #ff6600; 
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+.footer span{
+    color: #ff6600; 
+    font-size: 1.3rem;
 }
 .link{
     font-size: 1.4rem;
     margin: 0 4px;
     text-decoration: none;
-    color: #000;
+    color: var(--text-color);
     
 }
 .link:first-child{
     flex: 0.5;
     white-space: nowrap;
-    font-weight: bold;
+    font-weight: 600;
 }
 .content{
     display: flex;
@@ -27,15 +46,15 @@
     margin: 10px 10px;
 }
 .list a{
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
 }
 .list a:hover{
-    color: #000;
+    color: var(--text-color);
     text-decoration: underline;
 }
 .list{
-    color: #000;
+    color: var(--text-color);
     letter-spacing: 0.5px;
     margin-bottom: 15px;
     width: 800px;
@@ -75,14 +94,14 @@ hr{
 
 /* Spinner */
 .spinner {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     margin: 100px auto;
-    background-color: #333;
+    background-color: #ff6600;
   
     border-radius: 100%;  
     -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-    animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 0.7s infinite ease-in-out;
   }
   
   @-webkit-keyframes sk-scaleout {
@@ -100,7 +119,7 @@ hr{
     } 100% {
       -webkit-transform: scale(1.0);
       transform: scale(1.0);
-      opacity: 0;
+      opacity: 0.1;
     }
   }
 @media only screen and (max-width : 992px) { 

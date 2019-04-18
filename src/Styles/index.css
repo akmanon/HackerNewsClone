@@ -1,3 +1,8 @@
+:root {
+  --header-color: #ff6600;
+  --text-color : #000;
+  --bg-color : #f6f6ef;
+}
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +17,7 @@ html, body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f6f6ef;
+  background-color: var(--bg-color);
 }
 a {
   word-break: break-all;

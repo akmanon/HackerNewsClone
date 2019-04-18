@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getBestStories } from "../ApiPromise";
+import Spinner from "../Spinner";
 import List from "../List";
 
 class Best extends Component {
@@ -7,6 +8,7 @@ class Best extends Component {
         super(props);
         this.state = {
             data: [],
+            loading: true,
         }
     }
     componentDidMount() {
@@ -15,6 +17,7 @@ class Best extends Component {
             .then((res) => {
                 this.setState({
                     data: res,
+                    loading: false,
                 })
                 console.log(this.state.data)
             }).catch((error) => { console.log(error) })
@@ -23,7 +26,8 @@ class Best extends Component {
         return (
             <React.Fragment>
                 {
-                    this.state.data.map((id, i = 0) => <List data={id} key={id.id} index={++i} />)
+                    this.state.loading && (this.state.data.length === 0) ? <Spinner />
+                        : this.state.data.map((id, i = 0) => <List data={id} key={id.id} index={++i} />)
                 }
             </React.Fragment>
         );
